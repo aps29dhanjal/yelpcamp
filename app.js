@@ -46,7 +46,7 @@ const store = MongoStore.create({
 store.on('error',function(e){
     console.log(e)
 });
-app.use(session({store,name:'session', secret,resave:false,saveUninitialized:true,cookie:{ httpOnly:true,secure:true,expires:Date.now()+ 1000*60*60*24*7}}));
+app.use(session({store,name:'session', secret,resave:false,saveUninitialized:true,cookie:{ httpOnly:true,expires:Date.now()+ 1000*60*60*24*7}}));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
